@@ -4,13 +4,19 @@ public class Desenvolvedor extends Funcionario {
 	
 	private String linguagem;
 	
-	public Desenvolvedor(String nome, double salario, String linuagem){
+	public Desenvolvedor(String nome, double salario, String linguagem){
 		super(nome, salario);
 		this.linguagem = linguagem;
 	}
 	
 	
 	
+	public void setLinguagem(String linguagem) {
+		this.linguagem = linguagem;
+	}
+
+
+
 	public String getLinguagem() {
 		return linguagem;
 	}
@@ -18,6 +24,12 @@ public class Desenvolvedor extends Funcionario {
 
 	@Override
 	public void trabalhar() {
-		System.out.println(getNome() + " programando em " + linguagem + ".");
+		System.out.println(getNome() + " programando em " + getLinguagem() + ".");
 	}
+	
+	@Override
+	public double calcularSalario() {
+		return getSalario();
+	}
+	
 }

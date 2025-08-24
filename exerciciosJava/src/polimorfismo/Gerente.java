@@ -20,4 +20,11 @@ public class Gerente extends Funcionario {
 	public void trabalhar() {
 		System.out.println(getNome() +" está gerenciando a equipe...");
 	}
+	
+	@Override
+	public double calcularSalario() {
+	    return getSalario() + getBonus();
+	}
+
+	
 }

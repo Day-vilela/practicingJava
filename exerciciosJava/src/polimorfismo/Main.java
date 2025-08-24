@@ -1,15 +1,30 @@
 package polimorfismo;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Funcionario f1 = new Gerente("Carlos", 5000, 1200);
-		Funcionario f2 = new Desenvolvedor("Ana", 4000, "Java");
+		ArrayList<Funcionario> funcionarios = new ArrayList<>();
 		
-		f1.trabalhar(); // Carlos está gerenciando a equipe.
- 		f2.trabalhar(); // Ana está programando em Java.
+		funcionarios.add(new Gerente("Carlos", 5000, 1200));
+		funcionarios.add(new Gerente("Mariana", 7000, 2000));
+		funcionarios.add(new Desenvolvedor("Ana", 4000, "Java"));
+		funcionarios.add(new Desenvolvedor("Pedro", 4500, "Python"));
+		
+		for (Funcionario f : funcionarios) {
+			System.out.println("------------------------------");
+			System.out.println("Nome: " + f.getNome());
+			
+			if (f instanceof Gerente) {
+				System.out.println("Cargo: Gerente");
+			} else if (f instanceof Desenvolvedor){
+				System.out.println("Cargo: Desenvolvedor");
+			}
+			
+			System.out.println("Salário final: " + f.calcularSalario());
+			f.trabalhar(); 
+		}
+		
 	}
-	
-	// Aqui está o polimorfismo: mesmo método, mas comportamentos diferentes!
-
 }

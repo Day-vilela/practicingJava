@@ -37,4 +37,8 @@ public class Funcionario {
 	public void trabalhar(){
 		System.out.println(nome + " está trabalhando...");
 	}
+	
+	public double calcularSalario() {
+		return salario;
+	}	
 }
